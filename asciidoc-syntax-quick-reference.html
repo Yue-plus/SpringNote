@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<title>AsciiDoc 语法快速参考</title>
+<link rel="stylesheet" href="css/site.css">
+<script src="js/setup.js"></script><script defer src="js/site.js"></script>
+
+</head>
+<body class="article"><div id="banner-container" class="container" role="banner">
+  <div id="banner" class="contained" role="banner">
+    <div id="switch-theme">
+      <input type="checkbox" id="switch-theme-checkbox" />
+      <label for="switch-theme-checkbox">Dark Theme</label>
+    </div>
+  </div>
+</div>
+<div id="tocbar-container" class="container" role="navigation">
+  <div id="tocbar" class="contained" role="navigation">
+    <button id="toggle-toc"></button>
+  </div>
+</div>
+<div id="main-container" class="container">
+  <div id="main" class="contained">
+    <div id="doc" class="doc">
+<div id="header">
+<h1>AsciiDoc 语法快速参考</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>本文转载自 <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">AsciiDoc Syntax Quick Reference</a> 。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_段落"><a class="anchor" href="#_段落"></a>段落</h2>
+<div class="sectionbody">
+<div id="ex-normal" class="listingblock">
+<div class="title">段落</div>
+<div class="content">
+<pre>段落在 AsciiDoc 中不需要任何特殊标记。
+段落就是一段或多行连续的文本。
+
+要开始一个新的段落，至少用一个空行隔开它。</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-normal">段落</a></summary>
+<div class="content">
+<div class="paragraph">
+<p>include::asciidoc-syntax-example.adoc[tag=b-para]:</p>
+</div>
+</div>
+</details>
+<div id="ex-literal" class="listingblock">
+<div class="title">文字段落</div>
+<div class="content">
+<pre>一个正常的段落。
+
+ 一个文字段落。
+ 可以单行或连续多行，至少有一个空格缩进。
+
+ 文本以等宽（通常为 monospace）字体显示。
+ 行被预格式化（即：在源代码中格式化）
+ 空 格 和 换行符，
+ 就像这句话，
+ 将被保留。</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-literal">文字段落</a></summary>
+<div class="content">
+<div class="paragraph">
+<p>一个正常的段落。</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>一个文字段落。
+可以单行或连续多行，至少有一个空格缩进。</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>文本以等宽（通常为 monospace）字体显示。
+行被预格式化（即：在源代码中格式化）
+空 格 和 换行符，
+就像这句话，
+将被保留。</pre>
+</div>
+</div>
+</div>
+</details>
+<div id="ex-hardbreaks" class="listingblock">
+<div class="title">硬换行符</div>
+<div class="content">
+<pre>玫瑰是红色的， +
+紫罗兰是蓝色的。
+
+[%hardbreaks]
+Ruby 是红的。
+Java 是黑的。</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-hardbreaks">硬换行符</a></summary>
+<div class="content">
+<div class="paragraph">
+<p>玫瑰是红色的，<br>
+紫罗兰是蓝色的。</p>
+</div>
+<div class="paragraph">
+<p>Ruby 是红的。<br>
+Java 是黑的。</p>
+</div>
+</div>
+</details>
+<div id="ex-lead" class="listingblock">
+<div class="title">导语</div>
+<div class="content">
+<pre>[.lead]
+这段文字将作为开头段落（即，更大的字体）。
+
+这段文字不会。</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-lead">导语</a></summary>
+<div class="content">
+<div class="paragraph lead">
+<p>这段文字将作为开头段落（即，更大的字体）。</p>
+</div>
+<div class="paragraph">
+<p>这段文字不会。</p>
+</div>
+</div>
+</details>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+如果在序言的第一段上没有指定任何角色，默认的 Asciidoctor 样式表会自动将该段作为导语。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_text_formatting"><a class="anchor" href="#_text_formatting"></a>Text formatting</h2>
+<div class="sectionbody">
+<div id="ex-constrained" class="listingblock">
+<div class="title">Constrained bold, italic, and monospace</div>
+<div class="content">
+<pre></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-constrained">Constrained bold, italic, and monospace</a></summary>
+<div class="content">
+
+</div>
+</details>
+<div id="ex-unconstrained" class="listingblock">
+<div class="title">Unconstrained bold, italic, and monospace</div>
+<div class="content">
+<pre></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-unconstrained">Unconstrained bold, italic, and monospace</a></summary>
+<div class="content">
+
+</div>
+</details>
+<div id="ex-lines" class="listingblock">
+<div class="title">Highlight, underline, strikethrough, and custom role</div>
+<div class="content">
+<pre></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-lines">Highlight, underline, strikethrough, and custom role</a></summary>
+<div class="content">
+
+</div>
+</details>
+<div id="ex-sub-sup" class="listingblock">
+<div class="title">Superscript and subscript</div>
+<div class="content">
+<pre></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-sub-sup">Superscript and subscript</a></summary>
+<div class="content">
+
+</div>
+</details>
+<div id="ex-curved" class="listingblock">
+<div class="title">Smart quotes and apostrophes</div>
+<div class="content">
+<pre></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-curved">Smart quotes and apostrophes</a></summary>
+<div class="content">
+
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_links"><a class="anchor" href="#_links"></a>Links</h2>
+<div class="sectionbody">
+<div id="ex-urls" class="listingblock">
+<div class="title">Autolinks, URL macro, and mailto macro</div>
+<div class="content">
+<pre>link:macros:example$url.adoc[tag=b-base]
+
+link:macros:example$url.adoc[tag=b-scheme]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-urls">Autolinks, URL macro, and mailto macro</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="macros:example$url.adoc" class="bare">macros:example$url.adoc</a></p>
+</div>
+<div class="paragraph">
+<p><a href="macros:example$url.adoc" class="bare">macros:example$url.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-linkattrs" class="listingblock">
+<div class="title">URL macros with attributes</div>
+<div class="content">
+<pre>link:macros:example$url.adoc[tag=b-linkattrs]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-linkattrs">URL macros with attributes</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="macros:example$url.adoc" class="bare">macros:example$url.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The <code>link:</code> macro prefix is <em>not</em> required when the target starts with a URL scheme like <code>https:</code>.
+The URL scheme acts as an implicit macro prefix.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+If the link text contains a comma and the text is followed by one or more named attributes, you must enclose the text in double quotes.
+Otherwise, the text will be cut off at the comma (and the remaining text will get pulled into the attribute parsing).
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">URLs with spaces and special characters</div>
+<div class="content">
+<pre>link:macros:example$url.adoc[tag=b-spaces]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Link to relative file</div>
+<div class="content">
+<pre>link:index.html[Docs]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Link using a Windows UNC path</div>
+<div class="content">
+<pre>link:macros:example$url.adoc[tag=b-windows]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Inline anchors</div>
+<div class="content">
+<pre>link:attributes:example$id.adoc[tag=anchor]</pre>
+</div>
+</div>
+<div id="ex-xrefs" class="listingblock">
+<div class="title">Cross references</div>
+<div class="content">
+<pre>link:macros:example$xref.adoc[tag=b-base]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-xrefs">Cross references</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="macros:example$xref.adoc" class="bare">macros:example$xref.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="title">Inter-document cross references</div>
+<div class="content">
+<pre>link:macros:example$xref.adoc[tag=b-inter]</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_document_header"><a class="anchor" href="#_document_header"></a>Document header</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="document:header.html">document header</a> is optional.
+The header may not contain any empty lines and must be separated from the content by at least one empty line.</p>
+</div>
+<div class="listingblock">
+<div class="title">Title</div>
+<div class="content">
+<pre>link:document:example$title.adoc[tag=qr-title]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Title and author line</div>
+<div class="content">
+<pre>link:document:example$header.adoc[tag=qr-author]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Title, author line, and revision line</div>
+<div class="content">
+<pre>link:document:example$header.adoc[tag=qr-rev]</pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+You cannot have a <a href="document:revision-line.html">revision line</a> without an <a href="document:author-line.html">author line</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Document header with attribute entries</div>
+<div class="content">
+<pre>link:document:example$header.adoc[tag=qr-attributes]</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-titles"><a class="anchor" href="#section-titles"></a>Section titles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When the document type is <code>article</code> (the default), the document can only have one level 0 section title (<code>=</code>), which is the document title (i.e., doctitle).</p>
+</div>
+<div id="ex-article" class="listingblock">
+<div class="title">Article section levels</div>
+<div class="content">
+<pre>link:sections:example$section.adoc[tag=base]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-article">Article section levels</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="sections:example$section.adoc" class="bare">sections:example$section.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>The <code>book</code> document type can have additional level 0 section titles, which are interpreted as <a href="sections:parts.html">parts</a>.
+The presence of at least one part implicitly makes the document a multi-part book.</p>
+</div>
+<div class="listingblock">
+<div class="title">Book section levels</div>
+<div class="content">
+<pre>link:sections:example$section.adoc[tag=book]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Discrete heading (not a section)</div>
+<div class="content">
+<pre>[discrete]
+=== I'm an independent heading!</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_automatic_toc"><a class="anchor" href="#_automatic_toc"></a>Automatic TOC</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Activate Table of Contents for a document</div>
+<div class="content">
+<pre>= Document Title
+Doc Writer &lt;doc.writer@email.org&gt;
+:toc:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Table of Content&#8217;s <a href="toc:title.html">title</a>, <a href="toc:levels.html">displayed section depth</a>, and <a href="toc:position.html">position</a> can be customized.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_includes"><a class="anchor" href="#_includes"></a>Includes</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Include document parts</div>
+<div class="content">
+<pre>link:directives:example$include.adoc[tag=base]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Include content by tagged regions or lines</div>
+<div class="content">
+<pre>link:directives:example$include.adoc[tag=include-with-tag]
+
+link:directives:example$include.adoc[tag=line]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Include content from a URL</div>
+<div class="content">
+<pre>link:directives:example$include.adoc[tag=uri]</pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Including content from a URL is potentially dangerous, so it&#8217;s disabled if the safe mode is SECURE or greater.
+Assuming the safe mode is less than SECURE, you must also set the <code>allow-uri-read</code> attribute to permit the AsciiDoc processor to read content from a URL.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lists"><a class="anchor" href="#_lists"></a>Lists</h2>
+<div class="sectionbody">
+<div id="ex-ul" class="listingblock">
+<div class="title">Unordered list</div>
+<div class="content">
+<pre>link:lists:example$unordered.adoc[tag=qr-base]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-ul">Unordered list</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="lists:example$unordered.adoc" class="bare">lists:example$unordered.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+An empty line is required before and after a list to separate it from other blocks.
+You can force two adjacent lists apart by adding an empty attribute list (i.e., <code>[]</code>) above the second list or by inserting an empty line followed by a line comment after the first list.
+If you use a line comment, the convention is to use <code>//-</code> to provide a hint to other authors that it&#8217;s serving as a list divider.
+</td>
+</tr>
+</table>
+</div>
+<div id="ex-ul-max" class="listingblock">
+<div class="title">Unordered list max level nesting</div>
+<div class="content">
+<pre>link:lists:example$unordered.adoc[tag=max]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-ul-max">Unordered list max level nesting</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="lists:example$unordered.adoc" class="bare">lists:example$unordered.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>The <a href="lists:unordered.html#markers">unordered list marker</a> can be changed using a list style (e.g., <code>square</code>).</p>
+</div>
+<div id="ex-ol" class="listingblock">
+<div class="title">Ordered list</div>
+<div class="content">
+<pre>link:lists:example$ordered.adoc[tag=nest]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-ol">Ordered list</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="lists:example$ordered.adoc" class="bare">lists:example$ordered.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-ol-max" class="listingblock">
+<div class="title">Ordered list max level nesting</div>
+<div class="content">
+<pre>link:lists:example$ordered.adoc[tag=max]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-ol-max">Ordered list max level nesting</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="lists:example$ordered.adoc" class="bare">lists:example$ordered.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>Ordered lists support <a href="lists:ordered.html#styles">numeration styles</a> such as <code>lowergreek</code> and <code>decimal-leading-zero</code>.</p>
+</div>
+<div id="ex-check" class="listingblock">
+<div class="title">Checklist</div>
+<div class="content">
+<pre>link:lists:example$checklist.adoc[tag=check]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-check">Checklist</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="lists:example$checklist.adoc" class="bare">lists:example$checklist.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-dlist" class="listingblock">
+<div class="title">Description list</div>
+<div class="content">
+<pre>link:lists:example$description.adoc[tag=qr-base]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-dlist">Description list</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="lists:example$description.adoc" class="bare">lists:example$description.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-qa" class="listingblock">
+<div class="title">Question and answer list</div>
+<div class="content">
+<pre>link:lists:example$description.adoc[tag=qa]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-qa">Question and answer list</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="lists:example$description.adoc" class="bare">lists:example$description.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-mixed" class="listingblock">
+<div class="title">Mixed</div>
+<div class="content">
+<pre>link:lists:example$description.adoc[tag=3-mix]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-mixed">Mixed</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="lists:example$description.adoc" class="bare">lists:example$description.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Lists can be indented.
+Leading whitespace is not significant.
+</td>
+</tr>
+</table>
+</div>
+<div id="ex-complex" class="listingblock">
+<div class="title">Complex content in outline lists</div>
+<div class="content">
+<pre>link:lists:example$complex.adoc[tag=b-complex]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-complex">Complex content in outline lists</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="lists:example$complex.adoc" class="bare">lists:example$complex.adoc</a></p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_images"><a class="anchor" href="#_images"></a>Images</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use the <a href="macros:images-directory.html">imagesdir attribute</a> to avoid hard coding the common path to your images in every image macro.
+The value of this attribute can be an absolute path, relative path, or base URL.
+If the image target is a relative path, the attribute&#8217;s value is prepended (i.e., it&#8217;s resolved relative to the value of the <code>imagesdir</code> attribute).
+If the image target is a URL or absolute path, the attribute&#8217;s value is <em>not</em> prepended.</p>
+</div>
+<div id="ex-image-blocks" class="listingblock">
+<div class="title">Block image macro</div>
+<div class="content">
+<pre>link:macros:example$image.adoc[tag=base]
+
+link:macros:example$image.adoc[tag=alt]
+
+link:macros:example$image.adoc[tag=attr]
+
+link:macros:example$image.adoc[tag=ab-url]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-image-blocks">Block image macro</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="macros:example$image.adoc" class="bare">macros:example$image.adoc</a></p>
+</div>
+<div class="paragraph">
+<p><a href="macros:example$image.adoc" class="bare">macros:example$image.adoc</a></p>
+</div>
+<div class="paragraph">
+<p><a href="macros:example$image.adoc" class="bare">macros:example$image.adoc</a></p>
+</div>
+<div class="paragraph">
+<p><a href="macros:example$image.adoc" class="bare">macros:example$image.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>Two colons following the image keyword in the macro (i.e., <code>image::</code>) indicates a block image (aka figure), whereas one colon following the image keyword (i.e., <code>image:</code>) indicates an inline image.
+(All macros follow this pattern).
+You use an inline image when you need to place the image in a line of text.
+Otherwise, you should prefer the block form.</p>
+</div>
+<div id="ex-image-inline" class="listingblock">
+<div class="title">Inline image macro</div>
+<div class="content">
+<pre>link:macros:example$image.adoc[tag=inline]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-image-inline">Inline image macro</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="macros:example$image.adoc" class="bare">macros:example$image.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-image-role" class="listingblock">
+<div class="title">Inline image macro with positioning role</div>
+<div class="content">
+<pre>link:macros:example$image.adoc[tag=in-role]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-image-role">Inline image macro with positioning role</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="macros:example$image.adoc" class="bare">macros:example$image.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="title">Embedded</div>
+<div class="content">
+<pre>link:macros:example$image.adoc[tag=data]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the <code>data-uri</code> attribute is set, all images in the document&#8212;&#8203;including admonition icons&#8212;&#8203;are embedded into the document as {url-data-uri}[data URIs].
+You can also pass it as a command line argument using <code>-a data-uri</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_audio"><a class="anchor" href="#_audio"></a>Audio</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Block audio macro</div>
+<div class="content">
+<pre>link:macros:example$audio.adoc[tag=basic]
+
+link:macros:example$audio.adoc[tag=attrs]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can control the audio settings using <a href="macros:audio-and-video.html">additional attributes and options</a> on the macro.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_videos"><a class="anchor" href="#_videos"></a>Videos</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Block video macro</div>
+<div class="content">
+<pre>link:macros:example$video.adoc[tag=base]
+
+link:macros:example$video.adoc[tag=attr]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Embedded YouTube video</div>
+<div class="content">
+<pre>link:macros:example$video.adoc[tag=youtube]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Embedded Vimeo video</div>
+<div class="content">
+<pre>link:macros:example$video.adoc[tag=vimeo]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can control the video settings using <a href="macros:audio-and-video.html">additional attributes and options</a> on the macro.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_keyboard_button_and_menu_macros"><a class="anchor" href="#_keyboard_button_and_menu_macros"></a>Keyboard, button, and menu macros</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+You must set the <code>experimental</code> attribute in the document header to enable these macros.
+</td>
+</tr>
+</table>
+</div>
+<div id="ex-kbd" class="listingblock">
+<div class="title">Keyboard macro</div>
+<div class="content">
+<pre>link:macros:example$ui.adoc[tag=qr-key]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-kbd">Keyboard macro</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="macros:example$ui.adoc" class="bare">macros:example$ui.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-menu" class="listingblock">
+<div class="title">Menu macro</div>
+<div class="content">
+<pre>link:macros:example$ui.adoc[tag=menu]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-menu">Menu macro</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="macros:example$ui.adoc" class="bare">macros:example$ui.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-button" class="listingblock">
+<div class="title">Button macro</div>
+<div class="content">
+<pre>link:macros:example$ui.adoc[tag=button]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-button">Button macro</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="macros:example$ui.adoc" class="bare">macros:example$ui.adoc</a></p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_literals_and_source_code"><a class="anchor" href="#_literals_and_source_code"></a>Literals and source code</h2>
+<div class="sectionbody">
+<div id="ex-inline-literal" class="listingblock">
+<div class="title">Inline literal monospace</div>
+<div class="content">
+<pre>link:pass:example$pass.adoc[tag=backtick-plus]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-inline-literal">Inline literal monospace</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="pass:example$pass.adoc" class="bare">pass:example$pass.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-literal-line" class="listingblock">
+<div class="title">Literal paragraph</div>
+<div class="content">
+<pre>link:verbatim:example$literal.adoc[tag=b-imp-code]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-literal-line">Literal paragraph</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="verbatim:example$literal.adoc" class="bare">verbatim:example$literal.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-literal-block" class="listingblock">
+<div class="title">Literal block</div>
+<div class="content">
+<pre>link:verbatim:example$literal.adoc[tag=b-block]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-literal-block">Literal block</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="verbatim:example$literal.adoc" class="bare">verbatim:example$literal.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-listing" class="listingblock">
+<div class="title">Listing block with title</div>
+<div class="content">
+<pre>link:verbatim:example$listing.adoc[tag=qr-listing]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-listing">Listing block with title</a></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre>link:verbatim:example$listing.adoc[tag=qr-listing]</pre>
+</div>
+</div>
+</div>
+</details>
+<div id="ex-highlight" class="listingblock">
+<div class="title">Source block with title and syntax highlighting</div>
+<div class="content">
+<pre>.Some Ruby code
+link:verbatim:example$source.adoc[tag=src-base]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-highlight">Source block with title and syntax highlighting</a></summary>
+<div class="content">
+<div class="paragraph">
+<div class="title">Some Ruby code</div>
+<p><a href="verbatim:example$source.adoc" class="bare">verbatim:example$source.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You must enable <a href="verbatim:source-highlighter.html">source highlighting</a> by setting the <code>source-highlighter</code> attribute in the document header, CLI, or API.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>:source-highlighter: rouge</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See <a href="asciidoctor:syntax-highlighting:index.html">asciidoctor:syntax-highlighting:index.html</a> to learn which values are accepted when using Asciidoctor.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="ex-callouts" class="listingblock">
+<div class="title">Source block with callouts</div>
+<div class="content">
+<pre>link:verbatim:example$callout.adoc[tag=b-src]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-callouts">Source block with callouts</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="verbatim:example$callout.adoc" class="bare">verbatim:example$callout.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-hide-callouts" class="listingblock">
+<div class="title">Make callouts non-selectable</div>
+<div class="content">
+<pre>link:verbatim:example$callout.adoc[tag=b-nonselect]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-hide-callouts">Make callouts non-selectable</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="verbatim:example$callout.adoc" class="bare">verbatim:example$callout.adoc</a></p>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="title">Source block content included from a file</div>
+<div class="content">
+<pre>link:verbatim:example$source.adoc[tag=src-inc]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Source block content included from file relative to source directory</div>
+<div class="content">
+<pre>link:verbatim:example$source.adoc[tag=rel]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Strip leading indentation from partial file content</div>
+<div class="content">
+<pre>link:verbatim:example$source.adoc[tag=ind]</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <a href="directives:include-with-indent.html">indent attribute</a> is frequently used when including source code by <a href="directives:include-tagged-regions.html">tagged region</a> or <a href="directives:include-lines.html">lines</a>.
+It can be specified on the include directive itself or the enclosing literal, listing, or source block.</p>
+</div>
+<div class="paragraph">
+<p>When indent is 0, the leading block indent is stripped.</p>
+</div>
+<div class="paragraph">
+<p>When indent is greater than 0, the leading block indent is first stripped, then a block is indented by the number of columns equal to this value.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="ex-source-para" class="listingblock">
+<div class="title">Source paragraph (no empty lines)</div>
+<div class="content">
+<pre>link:verbatim:example$source.adoc[tag=src-para]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-source-para">Source paragraph (no empty lines)</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="verbatim:example$source.adoc" class="bare">verbatim:example$source.adoc</a></p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_admonitions"><a class="anchor" href="#_admonitions"></a>Admonitions</h2>
+<div class="sectionbody">
+<div id="ex-admon-para" class="listingblock">
+<div class="title">Admonition paragraph</div>
+<div class="content">
+<pre>link:blocks:example$admonition.adoc[tag=b-para]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-admon-para">Admonition paragraph</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="blocks:example$admonition.adoc" class="bare">blocks:example$admonition.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-admon-block" class="listingblock">
+<div class="title">Admonition block</div>
+<div class="content">
+<pre>link:blocks:example$admonition.adoc[tag=b-bl]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-admon-block">Admonition block</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="blocks:example$admonition.adoc" class="bare">blocks:example$admonition.adoc</a></p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_more_delimited_blocks"><a class="anchor" href="#_more_delimited_blocks"></a>More delimited blocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Any block can have a title, positioned above the block.
+A block title is a line of text that starts with a dot.
+The dot cannot be followed by a space.</p>
+</div>
+<div id="ex-sidebar" class="listingblock">
+<div class="title">Sidebar block</div>
+<div class="content">
+<pre>link:blocks:example$sidebar.adoc[tag=delimited]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-sidebar">Sidebar block</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="blocks:example$sidebar.adoc" class="bare">blocks:example$sidebar.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-example" class="listingblock">
+<div class="title">Example block</div>
+<div class="content">
+<pre>link:blocks:example$example.adoc[tag=base]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-example">Example block</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="blocks:example$example.adoc" class="bare">blocks:example$example.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-quotes" class="listingblock">
+<div class="title">Blockquotes</div>
+<div class="content">
+<pre>link:blocks:example$quote.adoc[tag=bl]
+
+link:blocks:example$quote.adoc[tag=para]
+
+link:blocks:example$quote.adoc[tag=no-cite]
+
+link:blocks:example$quote.adoc[tag=link-text]
+
+link:blocks:example$quote.adoc[tag=abbr]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-quotes">Blockquotes</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="blocks:example$quote.adoc" class="bare">blocks:example$quote.adoc</a></p>
+</div>
+<div class="paragraph">
+<p><a href="blocks:example$quote.adoc" class="bare">blocks:example$quote.adoc</a></p>
+</div>
+<div class="paragraph">
+<p><a href="blocks:example$quote.adoc" class="bare">blocks:example$quote.adoc</a></p>
+</div>
+<div class="paragraph">
+<p><a href="blocks:example$quote.adoc" class="bare">blocks:example$quote.adoc</a></p>
+</div>
+<div class="paragraph">
+<p><a href="blocks:example$quote.adoc" class="bare">blocks:example$quote.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-open" class="listingblock">
+<div class="title">Open blocks</div>
+<div class="content">
+<pre>link:blocks:example$open.adoc[tag=base]
+
+link:blocks:example$open.adoc[tag=src]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-open">Open blocks</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="blocks:example$open.adoc" class="bare">blocks:example$open.adoc</a></p>
+</div>
+<div class="paragraph">
+<p><a href="blocks:example$open.adoc" class="bare">blocks:example$open.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-pass-block" class="listingblock">
+<div class="title">Passthrough block</div>
+<div class="content">
+<pre>link:pass:example$pass.adoc[tag=b-bl]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-pass-block">Passthrough block</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="pass:example$pass.adoc" class="bare">pass:example$pass.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-block-subs" class="listingblock">
+<div class="title">Customize block substitutions</div>
+<div class="content">
+<pre><a href="verbatim:example$listing.adoc" class="bare">verbatim:example$listing.adoc</a></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-block-subs">Customize block substitutions</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="verbatim:example$listing.adoc" class="bare">verbatim:example$listing.adoc</a></p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tables"><a class="anchor" href="#_tables"></a>Tables</h2>
+<div class="sectionbody">
+<div id="ex-header-row" class="listingblock">
+<div class="title">Table with a title, two columns, a header row, and two rows of content</div>
+<div class="content">
+<pre>link:tables:example$table.adoc[tag=b-base-h-co]</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Unless the <code>cols</code> attribute is specified, the number of columns is equal to the number of cell separators on the first (non-empty) line.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>When an empty line immediately follows a non-empty line at the start of the table, the cells in the first line get promoted to the table header.</td>
+</tr>
+</table>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-header-row">Table with a title, two columns, a header row, and two rows of content</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="tables:example$table.adoc" class="bare">tables:example$table.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-cols" class="listingblock">
+<div class="title">Table with two columns, a header row, and two rows of content</div>
+<div class="content">
+<pre>link:tables:example$table.adoc[tag=b-col-h-co]</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>*</code> in the <code>cols</code> attribute is the repeat operator.
+It means repeat the column specification across the remaining columns.
+In this case, we are repeating the default formatting across 2 columns.
+When the cells in the header are not defined on a single line, you must use the <code>cols</code> attribute to set the number of columns in the table and the <code>%header</code> option (or <code>options=header</code> attribute) to promote the first row to the table header.</td>
+</tr>
+</table>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-cols">Table with two columns, a header row, and two rows of content</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="tables:example$table.adoc" class="bare">tables:example$table.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-cols-widths" class="listingblock">
+<div class="title">Table with three columns, a header row, and two rows of content</div>
+<div class="content">
+<pre>link:tables:example$table.adoc[tag=b-col-indv-co]</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>In this example, the <code>cols</code> attribute has two functions.
+It specifies that this table has three columns, and it sets their relative widths.</td>
+</tr>
+</table>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-cols-widths">Table with three columns, a header row, and two rows of content</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="tables:example$table.adoc" class="bare">tables:example$table.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-table-adoc" class="listingblock">
+<div class="title">Table with column containing AsciiDoc content</div>
+<div class="content">
+<pre>link:tables:example$table.adoc[tag=b-col-a]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-table-adoc">Table with column containing AsciiDoc content</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="tables:example$table.adoc" class="bare">tables:example$table.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-csv" class="listingblock">
+<div class="title">Table from CSV data using shorthand</div>
+<div class="content">
+<pre>link:tables:example$data.adoc[tag=s-csv]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-csv">Table from CSV data using shorthand</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="tables:example$data.adoc" class="bare">tables:example$data.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-csv-formal" class="listingblock">
+<div class="title">Table from CSV data</div>
+<div class="content">
+<pre>link:tables:example$data.adoc[tag=csv]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-csv-formal">Table from CSV data</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="tables:example$data.adoc" class="bare">tables:example$data.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-csv-include" class="listingblock">
+<div class="title">Table from CSV data in file</div>
+<div class="content">
+<pre>link:tables:example$data.adoc[tag=i-csv]</pre>
+</div>
+</div>
+<div id="ex-dsv" class="listingblock">
+<div class="title">Table from DSV data using shorthand</div>
+<div class="content">
+<pre>link:tables:example$data.adoc[tag=s-dsv]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-dsv">Table from DSV data using shorthand</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="tables:example$data.adoc" class="bare">tables:example$data.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-cell-format" class="listingblock">
+<div class="title">Table with formatted, aligned and merged cells</div>
+<div class="content">
+<pre>link:tables:example$cell.adoc[tag=b-spec]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-cell-format">Table with formatted, aligned and merged cells</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="tables:example$cell.adoc" class="bare">tables:example$cell.adoc</a></p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ids_roles_and_options"><a class="anchor" href="#_ids_roles_and_options"></a>IDs, roles, and options</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Shorthand method for assigning block ID (anchor) and role</div>
+<div class="content">
+<pre>[#goals.incremental]
+* Goal 1
+* Goal 2</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>To specify multiple roles using the shorthand syntax, delimit them by dots.</p>
+</li>
+<li>
+<p>The order of <code>id</code> and <code>role</code> values in the shorthand syntax does not matter.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Formal method for assigning block ID (anchor) and role</div>
+<div class="content">
+<pre>[id="goals",role="incremental"]
+* Goal 1
+* Goal 2</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Explicit section ID (anchor)</div>
+<div class="content">
+<pre>[#null-values]
+== Primitive types and null values</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Assign ID (anchor) and role to inline formatted text</div>
+<div class="content">
+<pre>[#id-name.role-name]`monospace text`
+
+[#free-world.goals]*free the world*</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Shorthand method for assigning block options</div>
+<div class="content">
+<pre>[%header%footer%autowidth]
+|===
+|Header A |Header B
+|Footer A |Footer B
+|===</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Formal method for assigning block options</div>
+<div class="content">
+<pre>[options="header,footer,autowidth"]
+|===
+|Header A |Header B
+|Footer A |Footer B
+|===
+
+// options can be shorted to opts
+[opts="header,footer,autowidth"]
+|===
+|Header A |Header B
+|Footer A |Footer B
+|===</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comments"><a class="anchor" href="#_comments"></a>Comments</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Line and block comments</div>
+<div class="content">
+<pre>// A single-line comment
+
+////
+A multi-line comment.
+
+Notice it's a delimited block.
+////</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_breaks"><a class="anchor" href="#_breaks"></a>Breaks</h2>
+<div class="sectionbody">
+<div id="ex-thematic" class="listingblock">
+<div class="title">Thematic break (aka horizontal rule)</div>
+<div class="content">
+<pre>before
+
+'''
+
+after</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-thematic">Thematic break (aka horizontal rule)</a></summary>
+<div class="content">
+<div class="paragraph">
+<p>before</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>after</p>
+</div>
+</div>
+</details>
+<div class="listingblock">
+<div class="title">Page break</div>
+<div class="content">
+<pre>&lt;&lt;&lt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_attributes_and_substitutions"><a class="anchor" href="#_attributes_and_substitutions"></a>Attributes and substitutions</h2>
+<div class="sectionbody">
+<div id="ex-attributes" class="listingblock">
+<div class="title">Attribute declaration and usage</div>
+<div class="content">
+<pre>:url-home: https://asciidoctor.org
+:link-docs: https://asciidoctor.org/docs[documentation]
+:summary: AsciiDoc is a mature, plain-text document format for \
+       writing notes, articles, documentation, books, and more. \
+       It's also a text processor &amp; toolchain for translating \
+       documents into various output formats (i.e., backends), \
+       including HTML, DocBook, PDF and ePub.
+:checkedbox: pass:normal[{startsb}&amp;#10004;{endsb}]
+
+Check out {url-home}[Asciidoctor]!
+
+{summary}
+
+Be sure to read the {link-docs} too!
+
+{checkedbox} That's done!</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-attributes">Attribute declaration and usage</a></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch unstyled">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Check out <a href="https://asciidoctor.org">Asciidoctor</a>!</p>
+</div>
+<div class="paragraph">
+<p>AsciiDoc is a mature, plain-text document format for writing notes, articles, documentation, books, and more. It&#8217;s also a text processor &amp; toolchain for translating documents into various output formats (i.e., backends), including HTML, DocBook, PDF and ePub.</p>
+</div>
+<div class="paragraph">
+<p>Be sure to read the <a href="https://asciidoctor.org/docs">documentation</a> too!</p>
+</div>
+<div class="paragraph">
+<p>[&#10004;] That&#8217;s done!</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<div class="paragraph">
+<p>To learn more about the available attributes and substitution groups see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="attributes:document-attributes-ref.html">attributes:document-attributes-ref.html</a></p>
+</li>
+<li>
+<p><a href="attributes:character-replacement-ref.html">attributes:character-replacement-ref.html</a></p>
+</li>
+<li>
+<p><a href="subs:apply-subs-to-blocks.html#subs-groups">Substitution Groups</a></p>
+</li>
+</ul>
+</div>
+<div id="ex-counter" class="listingblock">
+<div class="title">Counter attributes</div>
+<div class="content">
+<pre>link:attributes:example$counter.adoc[tag=base]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-counter">Counter attributes</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="attributes:example$counter.adoc" class="bare">attributes:example$counter.adoc</a></p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_text_replacements"><a class="anchor" href="#_text_replacements"></a>Text replacements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="subs:partial$subs-symbol-repl.adoc" class="bare">subs:partial$subs-symbol-repl.adoc</a></p>
+</div>
+<div class="paragraph">
+<p>Any named, numeric or hexadecimal {url-char-xml}[XML character reference^] is supported.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_escaping_substitutions"><a class="anchor" href="#_escaping_substitutions"></a>Escaping substitutions</h2>
+<div class="sectionbody">
+<div id="ex-slash" class="listingblock">
+<div class="title">Backslash</div>
+<div class="content">
+<pre>link:subs:example$subs.adoc[tag=backslash]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-slash">Backslash</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="subs:example$subs.adoc" class="bare">subs:example$subs.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-single-plus" class="listingblock">
+<div class="title">Single and double plus inline passthroughs</div>
+<div class="content">
+<pre>link:pass:example$pass.adoc[tag=plus]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-single-plus">Single and double plus inline passthroughs</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="pass:example$pass.adoc" class="bare">pass:example$pass.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-inline-pass" class="listingblock">
+<div class="title">Triple plus inline passthrough and inline pass macro</div>
+<div class="content">
+<pre>link:pass:example$pass.adoc[tag=b-3p-macro]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-inline-pass">Triple plus inline passthrough and inline pass macro</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="pass:example$pass.adoc" class="bare">pass:example$pass.adoc</a></p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bibliography"><a class="anchor" href="#_bibliography"></a>Bibliography</h2>
+<div class="sectionbody">
+<div id="ex-biblio" class="listingblock">
+<div class="title">Bibliography with inbound references</div>
+<div class="content">
+<pre>link:sections:example$bibliography.adoc[tag=base]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-biblio">Bibliography with inbound references</a></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="sections:example$bibliography.adoc" class="bare">sections:example$bibliography.adoc</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-footnotes"><a class="anchor" href="#section-footnotes"></a>Footnotes</h2>
+<div class="sectionbody">
+<div id="ex-footnotes" class="listingblock">
+<div class="title">Normal and reusable footnotes</div>
+<div class="content">
+<pre>link:macros:example$footnote.adoc[tag=base]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-footnotes">Normal and reusable footnotes</a></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch unstyled">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="macros:example$footnote.adoc" class="bare">macros:example$footnote.adoc</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="markdown-compatibility"><a class="anchor" href="#markdown-compatibility"></a>Markdown compatibility</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Markdown compatible syntax is an optional feature of the AsciiDoc language and is currently only available when using Asciidoctor.</p>
+</div>
+<div id="ex-md-headings" class="listingblock">
+<div class="title">Markdown-style headings</div>
+<div class="content">
+<pre>link:sections:example$section.adoc[tag=md]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-md-headings">Markdown-style headings</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="sections:example$section.adoc" class="bare">sections:example$section.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-fenced" class="listingblock">
+<div class="title">Fenced code block with syntax highlighting</div>
+<div class="content">
+<pre>link:verbatim:example$source.adoc[tag=fence]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-fenced">Fenced code block with syntax highlighting</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="verbatim:example$source.adoc" class="bare">verbatim:example$source.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-md-quote" class="listingblock">
+<div class="title">Markdown-style blockquote</div>
+<div class="content">
+<pre>link:blocks:example$quote.adoc[tag=md]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-md-quote">Markdown-style blockquote</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="blocks:example$quote.adoc" class="bare">blocks:example$quote.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-md-blockquote" class="listingblock">
+<div class="title">Markdown-style blockquote with block content</div>
+<div class="content">
+<pre>link:blocks:example$quote.adoc[tag=md-alt]</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-md-blockquote">Markdown-style blockquote with block content</a></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="blocks:example$quote.adoc" class="bare">blocks:example$quote.adoc</a></p>
+</div>
+</div>
+</details>
+<div id="ex-md-breaks" class="listingblock">
+<div class="title">Markdown-style thematic breaks</div>
+<div class="content">
+<pre>---
+
+- - -
+
+***
+
+* * *</pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">查看效果 <a href="#ex-md-breaks">Markdown-style thematic breaks</a></summary>
+<div class="content">
+<hr>
+<hr>
+<hr>
+<hr>
+</div>
+</details>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-05-27 08:58:16 +0800
+</div>
+</div>
+</div>
+  </div>
+</div>
+</body>
+</html>
