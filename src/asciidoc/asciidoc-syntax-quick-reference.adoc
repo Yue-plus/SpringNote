@@ -1,6 +1,7 @@
 = AsciiDoc 语法快速参考
+:toc:
 
-本文转载自 https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[AsciiDoc Syntax Quick Reference] 。
+本文翻译自 https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[AsciiDoc Syntax Quick Reference] 。
 
 == 段落
 
@@ -13,7 +14,7 @@ include::asciidoc-syntax-example.adoc[tag=b-para]
 .查看效果 <<ex-normal>>
 [%collapsible.result]
 ====
-include::asciidoc-syntax-example.adoc[tag=b-para]:
+include::asciidoc-syntax-example.adoc[tag=b-para]
 ====
 
 .文字段落
@@ -53,3 +54,220 @@ include::asciidoc-syntax-example.adoc[tag=qr-lead]
 ====
 
 TIP: 如果在序言的第一段上没有指定任何角色，默认的 Asciidoctor 样式表会自动将该段作为导语。
+
+== 文本格式
+
+.有约束的粗体、斜体、等宽字体
+[#ex-constrained]
+----
+include::asciidoc-syntax-example.adoc[tag=constrained-bold-italic-mono]
+----
+
+.查看效果 <<ex-constrained>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=constrained-bold-italic-mono]
+====
+
+.无约束的粗体、斜体、等宽字体
+[#ex-unconstrained]
+----
+include::asciidoc-syntax-example.adoc[tag=unconstrained-bold-italic-mono]
+----
+
+.查看效果 <<ex-unconstrained>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=unconstrained-bold-italic-mono]
+====
+
+.高亮、下划线、删除线、自定义角色
+[#ex-lines]
+----
+include::asciidoc-syntax-example.adoc[tag=qr-all]
+----
+
+.查看效果 <<ex-lines>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=qr-all]
+====
+
+.上标与下标
+[#ex-sub-sup]
+----
+include::asciidoc-syntax-example.adoc[tag=b-sub-sup]
+----
+
+.查看效果 <<ex-sub-sup>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=b-sub-sup]
+====
+
+.智能引号和撇号
+[#ex-curved]
+----
+include::asciidoc-syntax-example.adoc[tag=b-c-quote]
+----
+
+.查看效果 <<ex-curved>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=b-c-quote]
+====
+
+== 链接
+
+.自动链接、 URL 宏、 mailto 宏
+[#ex-urls]
+----
+include::asciidoc-syntax-example.adoc[tag=b-base]
+
+include::asciidoc-syntax-example.adoc[tag=b-scheme]
+----
+
+.查看效果 <<ex-urls>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=b-base]
+
+include::asciidoc-syntax-example.adoc[tag=b-scheme]
+====
+
+.带属性的 URL 宏
+[#ex-linkattrs]
+----
+include::asciidoc-syntax-example.adoc[tag=b-linkattrs]
+----
+
+.查看效果 <<ex-linkattrs>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=b-linkattrs]
+====
+
+IMPORTANT: 当目标以类似 `https:` 的 URL 方案开头时，`link:` 宏前缀不是必须的。
+URL 方案充当隐式宏前缀。
+
+CAUTION: 如果链接文本包含逗号，并且文本后跟一个或多个命名属性，则必须将文本括在双引号中。
+否则，文本将在逗号上切断（其余文本将被拉入属性解析）。
+
+.带空格和特殊字符的 URL
+----
+include::asciidoc-syntax-example.adoc[tag=b-spaces]
+----
+
+.链接到相关文件
+----
+link:index.html[Docs]
+----
+
+.使用 Windows UNC 路径链接
+----
+include::asciidoc-syntax-example.adoc[tag=b-windows]
+----
+
+.内联锚点
+----
+include::asciidoc-syntax-example.adoc[tag=anchor]
+----
+
+.交叉引用
+[#ex-xrefs]
+----
+include::asciidoc-syntax-example.adoc[tag=b-base]
+----
+
+.查看效果 <<ex-xrefs>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=b-base]
+====
+
+.文档间交叉引用
+----
+include::asciidoc-syntax-example.adoc[tag=b-inter]
+----
+
+== 文档页眉
+
+xref:document:header.adoc[文档页眉] 是可选的。
+页眉不能包含任何空行，且必须用至少一个空行将内容分隔开。
+
+.标题
+----
+include::asciidoc-syntax-example.adoc[tag=qr-title]
+----
+
+.标题与作者行
+----
+include::asciidoc-syntax-example.adoc[tag=qr-author]
+----
+
+.标题、作者行、版次行
+----
+include::asciidoc-syntax-example.adoc[tag=qr-rev]
+----
+
+IMPORTANT: 没有 xref:document:author-line.adoc[作者行] 就没有 xref:document:revision-line.adoc[版次行] 。
+
+.带属性的文档页眉
+----
+include::asciidoc-syntax-example.adoc[tag=qr-attributes]
+----
+
+[#section-titles]
+== 章节标题
+
+当文档类型为 `article` （默认）时，该文档只能具有一个 0 级标题（`=`），即章节标题（即，doctitle）。
+
+.文章的章节等级
+[#ex-article]
+----
+include::asciidoc-syntax-example.adoc[tag=base]
+----
+
+.查看效果 <<ex-article>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=b-base]
+====
+
+`book` 类型的文档可以有额外的 0 级章节标题，它们被解释为 xref:sections:parts.adoc[部]。
+至少有一部的存在会隐式地使文档成为具有多部的书。
+
+.书的章节等级
+----
+include::asciidoc-syntax-example.adoc[tag=book]
+----
+
+////
+xref:sections:title-links.adoc#link[sectlinks]::
+当设置文档属性 `sectlinks` 时，章节标题变为自链接。
+此功能允许读者轻松地为该章节添加书签。
+
+xref:sections:title-links.adoc#anchor[sectanchors]::
+设置文档属性 `sectanchors` 时，悬停时一个浮动章节图标锚点会出现在章节标题的前面。
+此功能为读者提供了另一种方法来轻松地为该章节添加书签。
+章节标题锚点依赖样式表的支持来正确显示。
+////
+
+.离散标题（不是章节）
+----
+[discrete]
+=== 这是一个独立的页眉！
+----
+
+== 自动 TOC
+
+.激活文档的目录
+----
+= 文档标题
+文档作者 <doc.writer@email.org>
+:toc:
+----
+
+可以自定义目录 xref:toc:title.adoc[标题] 、
+xref:toc:levels.adoc[显示章节深度] 、
+xref:toc:position.adoc[位置] 。
