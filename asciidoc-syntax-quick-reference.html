@@ -33,7 +33,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>本文转载自 <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">AsciiDoc Syntax Quick Reference</a> 。</p>
+<p>本文翻译自 <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">AsciiDoc Syntax Quick Reference</a> 。</p>
 </div>
 </div>
 </div>
@@ -53,7 +53,11 @@
 <summary class="title">查看效果 <a href="#ex-normal">段落</a></summary>
 <div class="content">
 <div class="paragraph">
-<p>include::asciidoc-syntax-example.adoc[tag=b-para]:</p>
+<p>段落在 AsciiDoc 中不需要任何特殊标记。
+段落就是一段或多行连续的文本。</p>
+</div>
+<div class="paragraph">
+<p>要开始一个新的段落，至少用一个空行隔开它。</p>
 </div>
 </div>
 </details>
@@ -65,7 +69,7 @@
  一个文字段落。
  可以单行或连续多行，至少有一个空格缩进。
 
- 文本以等宽（通常为 monospace）字体显示。
+ 文本以等宽字体（通常为 monospace）显示。
  行被预格式化（即：在源代码中格式化）
  空 格 和 换行符，
  就像这句话，
@@ -86,7 +90,7 @@
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>文本以等宽（通常为 monospace）字体显示。
+<pre>文本以等宽字体（通常为 monospace）显示。
 行被预格式化（即：在源代码中格式化）
 空 格 和 换行符，
 就像这句话，
@@ -154,103 +158,225 @@ Java 是黑的。</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_text_formatting"><a class="anchor" href="#_text_formatting"></a>Text formatting</h2>
+<h2 id="_文本格式"><a class="anchor" href="#_文本格式"></a>文本格式</h2>
 <div class="sectionbody">
 <div id="ex-constrained" class="listingblock">
-<div class="title">Constrained bold, italic, and monospace</div>
+<div class="title">有约束的粗体、斜体、等宽字体</div>
 <div class="content">
-<pre></pre>
+<pre>它对我有 *很强* 的意义。
+
+这一点我再 _强调_ 也不为过。
+
+键入 `OK` 以接受
+
+那 *_真的_* 必须走。
+
+不能选择一个？让我们 `*_都_*` 用上。</pre>
 </div>
 </div>
 <details class="result">
-<summary class="title">查看效果 <a href="#ex-constrained">Constrained bold, italic, and monospace</a></summary>
+<summary class="title">查看效果 <a href="#ex-constrained">有约束的粗体、斜体、等宽字体</a></summary>
 <div class="content">
-
+<div class="paragraph">
+<p>它对我有 <strong>很强</strong> 的意义。</p>
+</div>
+<div class="paragraph">
+<p>这一点我再 <em>强调</em> 也不为过。</p>
+</div>
+<div class="paragraph">
+<p>键入 <code>OK</code> 以接受</p>
+</div>
+<div class="paragraph">
+<p>那 <strong><em>真的</em></strong> 必须走。</p>
+</div>
+<div class="paragraph">
+<p>不能选择一个？让我们 <code><strong><em>都</em></strong></code> 用上。</p>
+</div>
 </div>
 </details>
 <div id="ex-unconstrained" class="listingblock">
-<div class="title">Unconstrained bold, italic, and monospace</div>
+<div class="title">无约束的粗体、斜体、等宽字体</div>
 <div class="content">
-<pre></pre>
+<pre>**C**reate, **R**ead, **U**pdate, and **D**elete (CRUD)
+
+That's fan__freakin__tastic!
+
+Don't pass generic ``Object``s to methods that accept ``String``s!
+
+It was Beatle**__mania__**!</pre>
 </div>
 </div>
 <details class="result">
-<summary class="title">查看效果 <a href="#ex-unconstrained">Unconstrained bold, italic, and monospace</a></summary>
+<summary class="title">查看效果 <a href="#ex-unconstrained">无约束的粗体、斜体、等宽字体</a></summary>
 <div class="content">
-
+<div class="paragraph">
+<p><strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate, and <strong>D</strong>elete (CRUD)</p>
+</div>
+<div class="paragraph">
+<p>That&#8217;s fan<em>freakin</em>tastic!</p>
+</div>
+<div class="paragraph">
+<p>Don&#8217;t pass generic <code>Object</code>s to methods that accept <code>String</code>s!</p>
+</div>
+<div class="paragraph">
+<p>It was Beatle<strong><em>mania</em></strong>!</p>
+</div>
 </div>
 </details>
 <div id="ex-lines" class="listingblock">
-<div class="title">Highlight, underline, strikethrough, and custom role</div>
+<div class="title">高亮、下划线、删除线、自定义角色</div>
 <div class="content">
-<pre></pre>
+<pre>狼人对 #肉桂# 过敏。
+
+##Mark##up refers to text that contains formatting ##mark##s.
+
+所有的 [.underline]#核心# 都去了哪里？
+
+我们需要 [.line-through]#十个# 二十个虚拟机。
+
+主题必须实现 [.myrole]#自定义角色# 。</pre>
 </div>
 </div>
 <details class="result">
-<summary class="title">查看效果 <a href="#ex-lines">Highlight, underline, strikethrough, and custom role</a></summary>
+<summary class="title">查看效果 <a href="#ex-lines">高亮、下划线、删除线、自定义角色</a></summary>
 <div class="content">
-
+<div class="paragraph">
+<p>狼人对 <mark>肉桂</mark> 过敏。</p>
+</div>
+<div class="paragraph">
+<p><mark>Mark</mark>up refers to text that contains formatting <mark>mark</mark>s.</p>
+</div>
+<div class="paragraph">
+<p>所有的 <span class="underline">核心</span> 都去了哪里？</p>
+</div>
+<div class="paragraph">
+<p>我们需要 <span class="line-through">十个</span> 二十个虚拟机。</p>
+</div>
+<div class="paragraph">
+<p>主题必须实现 <span class="myrole">自定义角色</span> 。</p>
+</div>
 </div>
 </details>
 <div id="ex-sub-sup" class="listingblock">
-<div class="title">Superscript and subscript</div>
+<div class="title">上标与下标</div>
 <div class="content">
-<pre></pre>
+<pre>^上^标短语
+
+~下~标短语</pre>
 </div>
 </div>
 <details class="result">
-<summary class="title">查看效果 <a href="#ex-sub-sup">Superscript and subscript</a></summary>
+<summary class="title">查看效果 <a href="#ex-sub-sup">上标与下标</a></summary>
 <div class="content">
-
+<div class="paragraph">
+<p><sup>上</sup>标短语</p>
+</div>
+<div class="paragraph">
+<p><sub>下</sub>标短语</p>
+</div>
 </div>
 </details>
 <div id="ex-curved" class="listingblock">
-<div class="title">Smart quotes and apostrophes</div>
+<div class="title">智能引号和撇号</div>
 <div class="content">
-<pre></pre>
+<pre>"`双引号`"
+
+'`单引号`'
+
+Olaf's desk was a mess.
+
+A ``std::vector```'s size is the number of items it contains.
+
+All of the werewolves`' desks were a mess.
+
+Olaf had been with the company since the `'00s.</pre>
 </div>
 </div>
 <details class="result">
-<summary class="title">查看效果 <a href="#ex-curved">Smart quotes and apostrophes</a></summary>
+<summary class="title">查看效果 <a href="#ex-curved">智能引号和撇号</a></summary>
 <div class="content">
-
+<div class="paragraph">
+<p>&#8220;双引号&#8221;</p>
+</div>
+<div class="paragraph">
+<p>&#8216;单引号&#8217;</p>
+</div>
+<div class="paragraph">
+<p>Olaf&#8217;s desk was a mess.</p>
+</div>
+<div class="paragraph">
+<p>A <code>std::vector</code>&#8217;s size is the number of items it contains.</p>
+</div>
+<div class="paragraph">
+<p>All of the werewolves&#8217; desks were a mess.</p>
+</div>
+<div class="paragraph">
+<p>Olaf had been with the company since the &#8217;00s.</p>
+</div>
 </div>
 </details>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_links"><a class="anchor" href="#_links"></a>Links</h2>
+<h2 id="_链接"><a class="anchor" href="#_链接"></a>链接</h2>
 <div class="sectionbody">
 <div id="ex-urls" class="listingblock">
-<div class="title">Autolinks, URL macro, and mailto macro</div>
+<div class="title">自动链接、 URL 宏、 mailto 宏</div>
 <div class="content">
-<pre>link:macros:example$url.adoc[tag=b-base]
+<pre>https://asciidoctor.org - automatic!
 
-link:macros:example$url.adoc[tag=b-scheme]</pre>
+https://asciidoctor.org[Asciidoctor]
+请参阅 &lt;&lt;_段落&gt;&gt; 了解如何编写段落。
+
+了解如何将文档组织为多个 &lt;&lt;section-titles, 章节&gt;&gt; 。
+
+devel@discuss.example.org
+
+mailto:devel@discuss.example.org[Discuss]
+
+mailto:join@discuss.example.org[Subscribe,Subscribe me,I want to join!]</pre>
 </div>
 </div>
 <details class="result">
-<summary class="title">查看效果 <a href="#ex-urls">Autolinks, URL macro, and mailto macro</a></summary>
+<summary class="title">查看效果 <a href="#ex-urls">自动链接、 URL 宏、 mailto 宏</a></summary>
 <div class="content">
 <div class="paragraph">
-<p><a href="macros:example$url.adoc" class="bare">macros:example$url.adoc</a></p>
+<p><a href="https://asciidoctor.org" class="bare">https://asciidoctor.org</a> - automatic!</p>
 </div>
 <div class="paragraph">
-<p><a href="macros:example$url.adoc" class="bare">macros:example$url.adoc</a></p>
+<p><a href="https://asciidoctor.org">Asciidoctor</a>
+请参阅 <a href="#_段落">段落</a> 了解如何编写段落。</p>
+</div>
+<div class="paragraph">
+<p>了解如何将文档组织为多个 <a href="#section-titles">章节</a> 。</p>
+</div>
+<div class="paragraph">
+<p><a href="mailto:devel@discuss.example.org">devel@discuss.example.org</a></p>
+</div>
+<div class="paragraph">
+<p><a href="mailto:devel@discuss.example.org">Discuss</a></p>
+</div>
+<div class="paragraph">
+<p><a href="mailto:join@discuss.example.org?subject=Subscribe+me&amp;body=I+want+to+join%21">Subscribe</a></p>
 </div>
 </div>
 </details>
 <div id="ex-linkattrs" class="listingblock">
-<div class="title">URL macros with attributes</div>
+<div class="title">带属性的 URL 宏</div>
 <div class="content">
-<pre>link:macros:example$url.adoc[tag=b-linkattrs]</pre>
+<pre>https://discuss.asciidoctor.org[Discuss Asciidoctor,role=external,window=_blank]
+
+https://discuss.asciidoctor.org[Discuss Asciidoctor^]</pre>
 </div>
 </div>
 <details class="result">
-<summary class="title">查看效果 <a href="#ex-linkattrs">URL macros with attributes</a></summary>
+<summary class="title">查看效果 <a href="#ex-linkattrs">带属性的 URL 宏</a></summary>
 <div class="content">
 <div class="paragraph">
-<p><a href="macros:example$url.adoc" class="bare">macros:example$url.adoc</a></p>
+<p><a href="https://discuss.asciidoctor.org" class="external" target="_blank" rel="noopener">Discuss Asciidoctor</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://discuss.asciidoctor.org" target="_blank" rel="noopener">Discuss Asciidoctor</a></p>
 </div>
 </div>
 </details>
@@ -261,8 +387,8 @@ link:macros:example$url.adoc[tag=b-scheme]</pre>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-The <code>link:</code> macro prefix is <em>not</em> required when the target starts with a URL scheme like <code>https:</code>.
-The URL scheme acts as an implicit macro prefix.
+当目标以类似 <code>https:</code> 的 URL 方案开头时，<code>link:</code> 宏前缀不是必须的。
+URL 方案充当隐式宏前缀。
 </td>
 </tr>
 </table>
@@ -274,81 +400,112 @@ The URL scheme acts as an implicit macro prefix.
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-If the link text contains a comma and the text is followed by one or more named attributes, you must enclose the text in double quotes.
-Otherwise, the text will be cut off at the comma (and the remaining text will get pulled into the attribute parsing).
+如果链接文本包含逗号，并且文本后跟一个或多个命名属性，则必须将文本括在双引号中。
+否则，文本将在逗号上切断（其余文本将被拉入属性解析）。
 </td>
 </tr>
 </table>
 </div>
 <div class="listingblock">
-<div class="title">URLs with spaces and special characters</div>
+<div class="title">带空格和特殊字符的 URL</div>
 <div class="content">
-<pre>link:macros:example$url.adoc[tag=b-spaces]</pre>
+<pre>link:++https://example.org/?q=[a b]++[URL with special characters]
+
+https://example.org/?q=%5Ba%20b%5D[URL with special characters]</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Link to relative file</div>
+<div class="title">链接到相关文件</div>
 <div class="content">
 <pre>link:index.html[Docs]</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Link using a Windows UNC path</div>
+<div class="title">使用 Windows UNC 路径链接</div>
 <div class="content">
-<pre>link:macros:example$url.adoc[tag=b-windows]</pre>
+<pre>link:\\server\share\whitepaper.pdf[Whitepaper]</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Inline anchors</div>
+<div class="title">内联锚点</div>
 <div class="content">
-<pre>link:attributes:example$id.adoc[tag=anchor]</pre>
+<pre>[[bookmark-a]]内联锚点使任意内容可引用。
+
+[#bookmark-b]#内联锚点可以应用于这样的短语。#
+
+anchor:bookmark-c[]使用交叉引用链接到此位置。
+
+[[bookmark-d,最后一段]]xreflabel 属性将用作交叉参考链接中的链接文本。</pre>
 </div>
 </div>
 <div id="ex-xrefs" class="listingblock">
-<div class="title">Cross references</div>
+<div class="title">交叉引用</div>
 <div class="content">
-<pre>link:macros:example$xref.adoc[tag=b-base]</pre>
+<pre>https://asciidoctor.org - automatic!
+
+https://asciidoctor.org[Asciidoctor]
+请参阅 &lt;&lt;_段落&gt;&gt; 了解如何编写段落。
+
+了解如何将文档组织为多个 &lt;&lt;section-titles, 章节&gt;&gt; 。</pre>
 </div>
 </div>
 <details class="result">
-<summary class="title">查看效果 <a href="#ex-xrefs">Cross references</a></summary>
+<summary class="title">查看效果 <a href="#ex-xrefs">交叉引用</a></summary>
 <div class="content">
 <div class="paragraph">
-<p><a href="macros:example$xref.adoc" class="bare">macros:example$xref.adoc</a></p>
+<p><a href="https://asciidoctor.org" class="bare">https://asciidoctor.org</a> - automatic!</p>
+</div>
+<div class="paragraph">
+<p><a href="https://asciidoctor.org">Asciidoctor</a>
+请参阅 <a href="#_段落">段落</a> 了解如何编写段落。</p>
+</div>
+<div class="paragraph">
+<p>了解如何将文档组织为多个 <a href="#section-titles">章节</a> 。</p>
 </div>
 </div>
 </details>
 <div class="listingblock">
-<div class="title">Inter-document cross references</div>
+<div class="title">文档间交叉引用</div>
 <div class="content">
-<pre>link:macros:example$xref.adoc[tag=b-inter]</pre>
+<pre>有关更多信息，请参阅 xref:document-b.adoc#section-b[Section B of Document B] 。
+
+如果你从不返回 xref:document-b.adoc[Document B]，我们会发送帮助。</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_document_header"><a class="anchor" href="#_document_header"></a>Document header</h2>
+<h2 id="_文档页眉"><a class="anchor" href="#_文档页眉"></a>文档页眉</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="document:header.html">document header</a> is optional.
-The header may not contain any empty lines and must be separated from the content by at least one empty line.</p>
+<p><a href="document:header.html">文档页眉</a> 是可选的。
+页眉不能包含任何空行，且必须用至少一个空行将内容分隔开。</p>
 </div>
 <div class="listingblock">
-<div class="title">Title</div>
+<div class="title">标题</div>
 <div class="content">
-<pre>link:document:example$title.adoc[tag=qr-title]</pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Title and author line</div>
-<div class="content">
-<pre>link:document:example$header.adoc[tag=qr-author]</pre>
+<pre>= 文档标题
+
+本文档提供……</pre>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Title, author line, and revision line</div>
+<div class="title">标题与作者行</div>
 <div class="content">
-<pre>link:document:example$header.adoc[tag=qr-rev]</pre>
+<pre>= 文档标题
+作者名 &lt;author@email.org&gt;; 作者名 &lt;author@email.org&gt;
+
+本文档提供……</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">标题、作者行、版次行</div>
+<div class="content">
+<pre>= 文档标题
+作者名 &lt;author@email.org&gt;
+v2.0, 2019-03-22
+
+本文档提供……</pre>
 </div>
 </div>
 <div class="admonitionblock important">
@@ -358,47 +515,72 @@ The header may not contain any empty lines and must be separated from the conten
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-You cannot have a <a href="document:revision-line.html">revision line</a> without an <a href="document:author-line.html">author line</a>.
+没有 <a href="document:author-line.html">作者行</a> 就没有 <a href="document:revision-line.html">版次行</a> 。
 </td>
 </tr>
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Document header with attribute entries</div>
+<div class="title">带属性的文档页眉</div>
 <div class="content">
-<pre>link:document:example$header.adoc[tag=qr-attributes]</pre>
+<pre>= 文档标题
+作者名 &lt;author@email.org&gt;
+v2.0, 2019-03-22
+:toc:
+:homepage: https://example.org
+
+This document provides...</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="section-titles"><a class="anchor" href="#section-titles"></a>Section titles</h2>
+<h2 id="section-titles"><a class="anchor" href="#section-titles"></a>章节标题</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When the document type is <code>article</code> (the default), the document can only have one level 0 section title (<code>=</code>), which is the document title (i.e., doctitle).</p>
+<p>当文档类型为 <code>article</code> （默认）时，该文档只能具有一个 0 级标题（<code>=</code>），即章节标题（即，doctitle）。</p>
 </div>
 <div id="ex-article" class="listingblock">
-<div class="title">Article section levels</div>
+<div class="title">文章章节等级</div>
 <div class="content">
-<pre>link:sections:example$section.adoc[tag=base]</pre>
+<pre>= 文档标题（0 级）
+
+== 一级章节标题
+
+=== 二级章节标题
+
+==== 三级章节标题
+
+===== 四级章节标题
+
+====== 五级章节标题
+
+== 另一个一级章节标题</pre>
 </div>
 </div>
 <details class="result">
-<summary class="title">查看效果 <a href="#ex-article">Article section levels</a></summary>
+<summary class="title">查看效果 <a href="#ex-article">文章章节等级</a></summary>
 <div class="content">
 <div class="paragraph">
-<p><a href="sections:example$section.adoc" class="bare">sections:example$section.adoc</a></p>
+<p><a href="https://asciidoctor.org" class="bare">https://asciidoctor.org</a> - automatic!</p>
+</div>
+<div class="paragraph">
+<p><a href="https://asciidoctor.org">Asciidoctor</a>
+请参阅 <a href="#_段落">段落</a> 了解如何编写段落。</p>
+</div>
+<div class="paragraph">
+<p>了解如何将文档组织为多个 <a href="#section-titles">章节</a> 。</p>
 </div>
 </div>
 </details>
 <div class="paragraph">
-<p>The <code>book</code> document type can have additional level 0 section titles, which are interpreted as <a href="sections:parts.html">parts</a>.
-The presence of at least one part implicitly makes the document a multi-part book.</p>
+<p><code>book</code> 类型的文档可以有额外的 0 级章节标题，它们被解释为 <a href="sections:parts.html">部</a>。
+至少有一个部分的存在会隐式地使文档成为多部分的书。</p>
 </div>
 <div class="listingblock">
 <div class="title">Book section levels</div>
 <div class="content">
-<pre>link:sections:example$section.adoc[tag=book]</pre>
+<pre></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1643,15 +1825,13 @@ Be sure to read the {link-docs} too!
 <div id="ex-md-headings" class="listingblock">
 <div class="title">Markdown-style headings</div>
 <div class="content">
-<pre>link:sections:example$section.adoc[tag=md]</pre>
+<pre></pre>
 </div>
 </div>
 <details class="result">
 <summary class="title">查看效果 <a href="#ex-md-headings">Markdown-style headings</a></summary>
 <div class="content">
-<div class="paragraph">
-<p><a href="sections:example$section.adoc" class="bare">sections:example$section.adoc</a></p>
-</div>
+
 </div>
 </details>
 <div id="ex-fenced" class="listingblock">
@@ -1722,7 +1902,7 @@ Be sure to read the {link-docs} too!
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-27 08:58:16 +0800
+Last updated 2022-05-27 15:05:01 +0800
 </div>
 </div>
 </div>
