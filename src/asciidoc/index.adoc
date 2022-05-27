@@ -1,1 +1,22 @@
-include::../../README.adoc[]
+= SpringNote
+Yue_plus <Yue_plus@foxmail.com>
+
+Spring 框架学习笔记。
+
+使用  https://github.com/spring-io/spring-asciidoctor-backends[Asciidoctor Spring Backends] 构建。
+
+[source,bash]
+----
+mvn prepare-package
+----
+
+== 常用链接
+
+* https://asciidoctor.cn/docs/[Asciidoctor 文档]
+** https://asciidoctor.cn/docs/asciidoc-syntax-quick-reference/[AsciiDoc 语法快速参考]
+* https://maven.apache.org/index.html[Maven]
+** https://github.com/asciidoctor/asciidoctor-maven-plugin[Asciidoctor Maven Plugin]
+
+== 目录
+
+* link:asciidoc-syntax-quick-reference.adoc[Asciidoc 语法快速参考]

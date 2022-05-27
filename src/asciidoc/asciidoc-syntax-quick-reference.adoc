@@ -1,0 +1,55 @@
+= AsciiDoc 语法快速参考
+
+本文转载自 https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[AsciiDoc Syntax Quick Reference] 。
+
+== 段落
+
+.段落
+[#ex-normal]
+----
+include::asciidoc-syntax-example.adoc[tag=b-para]
+----
+
+.查看效果 <<ex-normal>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=b-para]:
+====
+
+.文字段落
+[#ex-literal]
+----
+include::asciidoc-syntax-example.adoc[tag=qr-para]
+----
+
+.查看效果 <<ex-literal>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=qr-para]
+====
+
+.硬换行符
+[#ex-hardbreaks]
+----
+include::asciidoc-syntax-example.adoc[tag=hb-all]
+----
+
+.查看效果 <<ex-hardbreaks>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=hb-all]
+====
+
+.导语
+[#ex-lead]
+----
+include::asciidoc-syntax-example.adoc[tag=qr-lead]
+----
+
+.查看效果 <<ex-lead>>
+[%collapsible.result]
+====
+include::asciidoc-syntax-example.adoc[tag=qr-lead]
+====
+
+TIP: 如果在序言的第一段上没有指定任何角色，默认的 Asciidoctor 样式表会自动将该段作为导语。
